@@ -32,6 +32,7 @@ export default function Componente5(props) {
                   <h3>Setor: {setr.name}</h3>
                   <form onSubmit={updateCargo}>
                     <input type="text" name="id" id="id" value={carg.id} readOnly hidden/>
+                    <input type="text" name="idSetor" id="idSetor" value={carg.idSetor} readOnly hidden/>
                     <div class="col-auto">
                       <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
                     </div>
@@ -50,6 +51,7 @@ export default function Componente5(props) {
     e.preventDefault();
     const data = {
       name: e.target.name.value,
+      idSetor: +e.target.idSetor.value
     };
     fetch("http://localhost:8000/cargos/" + e.target.id.value, {
       method: "put",
@@ -58,7 +60,7 @@ export default function Componente5(props) {
       },
       body: JSON.stringify({ ...data }),
     })
-      .then(console.log("Setor Atualizado")) // or res.json()
+      .then(console.log("cargo Atualizado")) // or res.json()
       .then((res) => console.log(res));
       window.location.reload();
   }
