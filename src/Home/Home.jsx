@@ -103,18 +103,11 @@ export default function Home(props) {
   const toggleEditCargo = (carg) => setCargoSel(carg);
 
   const changeCargo = () => (CargoSel ? CargoSel : "");
-
-  function getCargo() {}
-  //Update
-  function updateSetor(e) {
-    e.preventDefault();
-    console.log("Setor atualizado! " + e.target.value);
-  }
-  function updateCargo() {}
+  
   //delete
   function deleteSetor(id) {
     console.log(id);
-    fetch("https://localhost:8000/setores/" + id, {
+    fetch("http://localhost:8000/setores/" + id, {
       method: "delete",
       headers: {
         "Content-Type": "application/json",
@@ -130,7 +123,7 @@ export default function Home(props) {
     console.log(id, idSetor);
     console.log(Cargos);
     console.log(id);
-    fetch("https://localhost:8000/cargos/" + id, {
+    fetch("http://localhost:8000/cargos/" + id, {
       method: "delete",
       headers: {
         "Content-Type": "application/json",

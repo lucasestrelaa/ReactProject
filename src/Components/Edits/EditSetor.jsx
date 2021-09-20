@@ -72,7 +72,7 @@ export default function Componente5(props) {
       const data = {
         name: e.target.name.value,
       };
-      fetch("https://localhost:8000/setores/" + e.target.id.value, {
+      fetch("http://localhost:8000/setores/" + e.target.id.value, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export default function Componente5(props) {
     console.log(id, idSetor);
     console.log(Cargos);
     console.log(id);
-    fetch("https://localhost:8000/cargos/" + id, {
+    fetch("http://localhost:8000/cargos/" + id, {
       method: "delete",
       headers: {
         "Content-Type": "application/json",

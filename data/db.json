@@ -1,10 +1,6 @@
 {
   "setores": [
     {
-      "id": 1,
-      "name": "Setor 1"
-    },
-    {
       "id": 2,
       "name": "Setor 2"
     },
@@ -31,6 +27,10 @@
     {
       "name": "Setor 8",
       "id": 8
+    },
+    {
+      "name": "Setor 25",
+      "id": 9
     }
   ],
   "cargos": [

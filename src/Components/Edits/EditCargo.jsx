@@ -51,7 +51,7 @@ export default function Componente5(props) {
     const data = {
       name: e.target.name.value,
     };
-    fetch("https://localhost:8000/cargos/" + e.target.id.value, {
+    fetch("http://localhost:8000/cargos/" + e.target.id.value, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
