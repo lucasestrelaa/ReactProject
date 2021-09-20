@@ -1,0 +1,102 @@
+{
+  "setores": [
+    {
+      "id": 1,
+      "name": "Circunscricional"
+    },
+    {
+      "id": 2,
+      "name": "Especializada"
+    },
+    {
+      "id": 3,
+      "name": "Depate"
+    },
+    {
+      "id": 4,
+      "name": "Técnica"
+    },
+    {
+      "name": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "id": 6
+    },
+    {
+      "name": "Dinf",
+      "id": 7
+    },
+    {
+      "name": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "id": 9
+    },
+    {
+      "name": "teste02",
+      "id": 10
+    },
+    {
+      "name": "teste02",
+      "id": 11
+    },
+    {
+      "name": "teste02",
+      "id": 12
+    },
+    {
+      "name": "depate 2",
+      "id": 13
+    },
+    {
+      "name": "Depate 3",
+      "id": 14
+    }
+  ],
+  "cargos": [
+    {
+      "id": 1,
+      "name": "Escrivão",
+      "idSetor": 1
+    },
+    {
+      "id": 2,
+      "name": "Agente",
+      "idSetor": 1
+    },
+    {
+      "id": 3,
+      "name": "Delegado",
+      "idSetor": 1
+    },
+    {
+      "id": 4,
+      "name": "Escrivão - Investigador",
+      "idSetor": 2
+    },
+    {
+      "id": 5,
+      "name": "Agente - Investigador",
+      "idSetor": 2
+    },
+    {
+      "id": 6,
+      "name": "Delegado - Investigador",
+      "idSetor": 2
+    },
+    {
+      "name": "Programador 2",
+      "idSetor": 2,
+      "id": 7
+    },
+    {
+      "name": "Teste setor 11",
+      "idSetor": 11,
+      "id": 8
+    }
+  ]
+}
