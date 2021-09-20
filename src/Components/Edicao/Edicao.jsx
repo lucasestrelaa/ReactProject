@@ -5,7 +5,7 @@ export default function Componente2(props) {
     //const [editForm, setEditForm] = useState(false);
     return (
         <div>
-            <p>Edição</p>
+            <p>Editar</p>
             <button onClick={() => props.changeEdit()}>Mostrar</button>
             <hr />
         </div>

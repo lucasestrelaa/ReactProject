@@ -2,101 +2,60 @@
   "setores": [
     {
       "id": 1,
-      "name": "Circunscricional"
+      "name": "Setor 1"
     },
     {
       "id": 2,
-      "name": "Especializada"
+      "name": "Setor 2"
     },
     {
       "id": 3,
-      "name": "Depate"
+      "name": "Setor 3"
     },
     {
       "id": 4,
-      "name": "Técnica"
+      "name": "Setor 4"
     },
     {
-      "name": "",
+      "name": "Setor 5",
       "id": 5
-    },
-    {
-      "name": "",
-      "id": 6
-    },
-    {
-      "name": "Dinf",
-      "id": 7
-    },
-    {
-      "name": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "id": 9
-    },
-    {
-      "name": "teste02",
-      "id": 10
-    },
-    {
-      "name": "teste02",
-      "id": 11
-    },
-    {
-      "name": "teste02",
-      "id": 12
-    },
-    {
-      "name": "depate 2",
-      "id": 13
-    },
-    {
-      "name": "Depate 3",
-      "id": 14
     }
   ],
   "cargos": [
     {
       "id": 1,
-      "name": "Escrivão",
+      "name": "Cargo 1",
       "idSetor": 1
     },
     {
       "id": 2,
-      "name": "Agente",
+      "name": "Cargo 2",
       "idSetor": 1
     },
     {
       "id": 3,
-      "name": "Delegado",
+      "name": "Cargo 3",
       "idSetor": 1
     },
     {
       "id": 4,
-      "name": "Escrivão - Investigador",
+      "name": "Cargo 4",
       "idSetor": 2
     },
     {
       "id": 5,
-      "name": "Agente - Investigador",
+      "name": "Cargo 5",
       "idSetor": 2
     },
     {
       "id": 6,
-      "name": "Delegado - Investigador",
+      "name": "Cargo 6",
       "idSetor": 2
     },
     {
-      "name": "Programador 2",
+      "name": "Cargo 7",
       "idSetor": 2,
       "id": 7
-    },
-    {
-      "name": "Teste setor 11",
-      "idSetor": 11,
-      "id": 8
     }
   ]
 }

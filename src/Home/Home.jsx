@@ -5,6 +5,7 @@ import ShowEditting from "../Components/Show/Show";
 import EditSetor from "../Components/Edits/EditSetor";
 import EditCargo from "../Components/Edits/EditCargo";
 import NewSetor from "../Components/New/NewSetor";
+import Header from '../layout/Header';
 import Card from "../layout/Card";
 import "./Home.css";
 
@@ -79,7 +80,7 @@ export default function Home(props) {
               <span key={cargo.id}>{cargo.name}</span>
               <button onClick={() => toggleEditCargo(cargo.id)}>Editar</button>
               <button onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
-                X
+                Excluir Cargo
               </button>
             </div>
           );

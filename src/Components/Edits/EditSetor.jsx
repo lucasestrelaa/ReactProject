@@ -20,7 +20,7 @@ export default function Componente5(props) {
           return (
             <div>
               <form onSubmit={updateSetor}>
-                <input type="text" name="id" id="id" value={sel.id} readOnly />
+                <input type="text" name="id" id="id" value={sel.id} readOnly hidden/>
                 <input
                   type="text"
                   name="name"
@@ -31,6 +31,7 @@ export default function Componente5(props) {
                 <button type="submit">Atualizar</button>
               </form>
               <NewCargo id={sel.id}></NewCargo>
+              <ul>{() => props.getCargos(sel.id)}</ul>
             </div>
           );
         }

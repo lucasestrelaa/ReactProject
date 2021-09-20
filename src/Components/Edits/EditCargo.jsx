@@ -23,7 +23,7 @@ export default function Componente5(props) {
   }, []);
   function getCargo() {
     
-      //document.getElementById("FormNew").style.display = "none";
+    
     
     
     if (Cargos) {
@@ -35,7 +35,7 @@ export default function Componente5(props) {
                 <div>
                   <h3>Setor: {setr.name}</h3>
                   <form onSubmit={updateCargo}>
-                    <input type="text" name="id" id="id" value={carg.id} readOnly />
+                    <input type="text" name="id" id="id" value={carg.id} readOnly hidden/>
                     <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
                     <button type="submit">Atualizar</button>
                   </form>
@@ -65,7 +65,6 @@ export default function Componente5(props) {
 
   return (
     <div>
-      <h3>{props.number}</h3>
       <h3>{getCargo()}</h3>
     </div>
   );
