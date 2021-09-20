@@ -22,10 +22,6 @@ export default function Componente5(props) {
       });
   }, []);
   function getCargo() {
-    
-    
-    
-    
     if (Cargos) {
       return Cargos.map((carg) => {
         if (carg.id === props.number) {
@@ -64,6 +60,7 @@ export default function Componente5(props) {
     })
       .then(console.log("Setor Atualizado")) // or res.json()
       .then((res) => console.log(res));
+      window.location.reload();
   }
 
   return (

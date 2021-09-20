@@ -25,6 +25,7 @@ export default function newSetor(props) {
         //console.log(dados);
           //() => props.getSetores()
         console.log("formúlário" + e.target.name.value);
+        window.location.reload();
       }
     return (
         <div className="FormNew" id="FormNew">

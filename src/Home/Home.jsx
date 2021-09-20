@@ -124,6 +124,7 @@ export default function Home(props) {
       .then((res) => console.log(res));
     //const newSetores = Setores.filter((setor) => setor.id !== id);
     //setSetores(newSetores);
+    window.location.reload();
   }
   function deleteCargo(id, idSetor) {
     console.log(id, idSetor);
@@ -137,6 +138,7 @@ export default function Home(props) {
     })
       .then(console.log("cargo removido")) // or res.json()
       .then((res) => console.log(res));
+      window.location.reload();
   }
   //layout
   $(".showOrHide").click(function(){

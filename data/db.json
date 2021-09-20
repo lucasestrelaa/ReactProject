@@ -19,6 +19,18 @@
     {
       "name": "Setor 5",
       "id": 5
+    },
+    {
+      "name": "Setor 6",
+      "id": 6
+    },
+    {
+      "name": "Setor 6",
+      "id": 7
+    },
+    {
+      "name": "Setor 8",
+      "id": 8
     }
   ],
   "cargos": [
@@ -56,6 +68,11 @@
       "name": "Cargo 7",
       "idSetor": 2,
       "id": 7
+    },
+    {
+      "name": "Cargo 4",
+      "idSetor": 1,
+      "id": 8
     }
   ]
 }

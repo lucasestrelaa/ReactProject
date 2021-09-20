@@ -26,6 +26,7 @@ export default function newCargo(props) {
     //console.log(dados);
     //() => props.getSetores()
     console.log("formúlário" + e.target.name.value);
+    window.location.reload();
   }
   function newCargoF() {
     

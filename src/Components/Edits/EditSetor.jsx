@@ -81,6 +81,7 @@ export default function Componente5(props) {
     })
       .then(console.log("Setor Atualizado")) // or res.json()
       .then((res) => console.log(res));
+      window.location.reload();
 
       
 
@@ -97,6 +98,7 @@ export default function Componente5(props) {
     })
       .then(console.log("cargo removido")) // or res.json()
       .then((res) => console.log(res));
+      window.location.reload();
   }
 
   return (
