@@ -5,8 +5,17 @@ import NewCargo from '../New/NewCargo'
 
 export default function Componente5(props) {
   const [Setores, setSetores] = useState(null);
+  const [Cargos, setCargos] = useState(null);
   const [Setor, setSetor] = useState("null");
   useEffect(() => {
+    fetch("http://localhost:8000/cargos")
+      .then((res) => {
+        //console.log(res.json());
+        return res.json();
+      })
+      .then((cargo) => {
+        setCargos(cargo);
+      });
     fetch("http://localhost:8000/setores")
       .then((res) => {
         return res.json();
@@ -15,12 +24,31 @@ export default function Componente5(props) {
         setSetores(req);
       });
   }, []);
+  function getCargos(del) {
+    if (Cargos) {
+      return Cargos.map((cargo) => {
+        //console.log(cargo.name);
+        if (cargo.idSetor === del) {
+          return (
+            <div className="col-md-auto">
+              <span key={cargo.id} class="card">{cargo.name}</span>
+              <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
+                Excluir Cargo
+              </button>
+              <hr />
+            </div>
+          );
+        }
+      });
+    }
+  }
   function getSetor() {
+
     if (Setores) {
       return Setores.map((sel) => {
         if (sel.id === props.number) {
           return (
-            <div >
+            <div className="EditSetor" >
               <h3>Setor: {sel.name}</h3>
               <form onSubmit={updateSetor}  >
                 <div>
@@ -32,7 +60,7 @@ export default function Componente5(props) {
                 <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
               </form>
               <NewCargo id={sel.id}></NewCargo>
-              <ul>{() => props.getCargos(sel.id)}</ul>
+              <ul>{getCargos(sel.id)}</ul>
             </div>
           );
         }
@@ -56,6 +84,19 @@ export default function Componente5(props) {
 
       
 
+  }
+  function deleteCargo(id, idSetor) {
+    console.log(id, idSetor);
+    console.log(Cargos);
+    console.log(id);
+    fetch("https://localhost:8000/cargos/" + id, {
+      method: "delete",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then(console.log("cargo removido")) // or res.json()
+      .then((res) => console.log(res));
   }
 
   return (
