@@ -3,7 +3,7 @@ import React from 'react'
 export default function newSetor(props) {
     function saveForm(e) {
         e.preventDefault();
-        console.log(e.target.name.value + "123123123");
+        console.log(e.target.name.value);
         const data = {
           name: e.target.name.value,
           //"cargo": e.target.cargo.value
