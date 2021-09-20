@@ -36,8 +36,11 @@ export default function Componente5(props) {
                   <h3>Setor: {setr.name}</h3>
                   <form onSubmit={updateCargo}>
                     <input type="text" name="id" id="id" value={carg.id} readOnly hidden/>
-                    <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
-                    <button type="submit">Atualizar</button>
+                    <div class="col-auto">
+                      <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
+                    <p>{() => props.getCargos}</p>
                   </form>
                 </div>
               );

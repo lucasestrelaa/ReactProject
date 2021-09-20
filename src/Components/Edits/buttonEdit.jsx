@@ -1,4 +1,6 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 
 export default function Components4(props) {
     return (

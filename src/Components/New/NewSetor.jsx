@@ -3,7 +3,7 @@ import React from 'react'
 export default function newSetor(props) {
     function saveForm(e) {
         e.preventDefault();
-        console.log(e.target.name.value);
+        console.log(e.target.name.value );
         const data = {
           name: e.target.name.value,
           //"cargo": e.target.cargo.value
@@ -29,9 +29,13 @@ export default function newSetor(props) {
     return (
         <div className="FormNew" id="FormNew">
           <h3>Novo Setor</h3>
+          
            <form onSubmit={saveForm} method="post">
+           <div class="col-auto">
                <input type="text" name="name" id="name" placeholder="Digite o nome do setor"/>
-               <button type="submit">Salvar</button>
+               </div>
+               <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+              
             </form> 
         </div>
     )

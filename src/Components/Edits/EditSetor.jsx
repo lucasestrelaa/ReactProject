@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 import NewCargo from '../New/NewCargo'
 
 export default function Componente5(props) {
@@ -18,17 +20,16 @@ export default function Componente5(props) {
       return Setores.map((sel) => {
         if (sel.id === props.number) {
           return (
-            <div>
-              <form onSubmit={updateSetor}>
-                <input type="text" name="id" id="id" value={sel.id} readOnly hidden/>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder={sel.name}
-                  onChange={(e) => setSetor(e.target.value)}
-                />
-                <button type="submit">Atualizar</button>
+            <div >
+              <h3>Setor: {sel.name}</h3>
+              <form onSubmit={updateSetor}  >
+                <div>
+                  <input type="text"   name="id" id="id" value={sel.id} readOnly hidden/>
+                </div>
+                <div class="col-auto">
+                  <input type="text" name="name" id="name" placeholder={sel.name} onChange={(e) => setSetor(e.target.value)} />
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
               </form>
               <NewCargo id={sel.id}></NewCargo>
               <ul>{() => props.getCargos(sel.id)}</ul>

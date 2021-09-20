@@ -7,6 +7,8 @@ import EditCargo from "../Components/Edits/EditCargo";
 import NewSetor from "../Components/New/NewSetor";
 import Header from '../layout/Header';
 import Card from "../layout/Card";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
 import "./Home.css";
 
 export default function Home(props) {
@@ -55,16 +57,16 @@ export default function Home(props) {
     if (Setores) {
       return Setores.map((del) => {
         return (
-          <div>
-            <span key={del.id} className="divSetor">
+          <div >
+            <span key={del.id} className="card">
               {del.id} - {del.name}
             </span>
-            <button setor={del} onClick={() => toggleEditSetor(del.id)}>
+            <button setor={del} onClick={() => toggleEditSetor(del.id)} class="btn btn-primary btn-sm">
               Editar
             </button>
 
-            <button onClick={() => deleteSetor(del.id)}>Excluir Setor</button>
-            <ul className="ulCargos">{getCargos(del.id)}</ul>
+            <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteSetor(del.id)}>Excluir Setor</button>
+            <ul class="ulCargos" >{getCargos(del.id)}</ul>
           </div>
         );
       });
@@ -77,11 +79,12 @@ export default function Home(props) {
         if (cargo.idSetor === del) {
           return (
             <div>
-              <span key={cargo.id}>{cargo.name}</span>
-              <button onClick={() => toggleEditCargo(cargo.id)}>Editar</button>
-              <button onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
+              <span key={cargo.id} class="card">{cargo.name}</span>
+              <button type="button" class="btn btn-primary btn-sm" onClick={() => toggleEditCargo(cargo.id)}>Editar</button>
+              <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
                 Excluir Cargo
               </button>
+              <hr />
             </div>
           );
         }
@@ -135,6 +138,10 @@ export default function Home(props) {
       .then(console.log("cargo removido")) // or res.json()
       .then((res) => console.log(res));
   }
+  //layout
+  $(".showOrHide").click(function(){
+    $(this).next("ulCargos").toggle();
+  });
 
   //returns
   return (

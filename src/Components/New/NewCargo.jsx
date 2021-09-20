@@ -33,10 +33,11 @@ export default function newCargo(props) {
   return (
     <div>
       <form onSubmit={saveFormCargo} method="post">
+        <div class="col-auto">
           <input type="text" name="name" id="name" placeholder="Digite o nome do cargo" />
-          <button type="submit">Novo Cargo</button>
-        </form>
-      
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Novo Cargo</button>
+      </form>
     </div>
   );
 }
