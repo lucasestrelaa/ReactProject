@@ -24,9 +24,7 @@ export default function Home(props) {
     editForm
       ? "Editando" + console.log(Setores)
       : "Bloqueado" + console.log(Cargos);
-
-  //const id = () =>
-
+      
   //data and variables
   useEffect(() => {
     fetch("http://localhost:8000/cargos")
@@ -52,8 +50,6 @@ export default function Home(props) {
 
   //Read
   function getSetores() {
-    //adicionar no button editar
-    //<button onClick={showCargos}>Mostrar Cargos</button>
     if (Setores) {
       return Setores.map((del) => {
         return (
@@ -64,7 +60,6 @@ export default function Home(props) {
             <button setor={del} onClick={() => toggleEditSetor(del.id)} class="btn btn-primary btn-sm">
               Editar
             </button>
-
             <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteSetor(del.id)}>Excluir Setor</button>
             <ul class="ulCargos" >{getCargos(del.id)}</ul>
           </div>
@@ -75,7 +70,6 @@ export default function Home(props) {
   function getCargos(del) {
     if (Cargos) {
       return Cargos.map((cargo) => {
-        //console.log(cargo.name);
         if (cargo.idSetor === del) {
           return (
             <div>
@@ -91,11 +85,8 @@ export default function Home(props) {
       });
     }
   }
-  //Read each
-  //pegar apenas o selecionado
+  //Read one
 
-  //receber o selecionado
-  //const dataFinal = (del) => del ? del.id : "array Vazio"
   const toggleEditSetor = (del) => setSetorSel(del);
 
   const changeSetor = () => (SetorSel ? SetorSel : "");
@@ -113,10 +104,8 @@ export default function Home(props) {
         "Content-Type": "application/json",
       },
     })
-      .then(console.log("Setor removido")) // or res.json()
+      .then(console.log("Setor removido"))
       .then((res) => console.log(res));
-    //const newSetores = Setores.filter((setor) => setor.id !== id);
-    //setSetores(newSetores);
     window.location.reload();
   }
   function deleteCargo(id, idSetor) {
@@ -129,7 +118,7 @@ export default function Home(props) {
         "Content-Type": "application/json",
       },
     })
-      .then(console.log("cargo removido")) // or res.json()
+      .then(console.log("cargo removido"))
       .then((res) => console.log(res));
       window.location.reload();
   }
@@ -137,8 +126,6 @@ export default function Home(props) {
   $(".showOrHide").click(function(){
     $(this).next("ulCargos").toggle();
   });
-
-  //returns
   return (
     <div className="Body">
       <nav className="NavData">

@@ -7,6 +7,7 @@ export default function Componente5(props) {
   const [Setores, setSetores] = useState(null);
   const [Cargos, setCargos] = useState(null);
   const [Setor, setSetor] = useState("null");
+  //data
   useEffect(() => {
     fetch("http://localhost:8000/cargos")
       .then((res) => {
@@ -43,7 +44,6 @@ export default function Componente5(props) {
     }
   }
   function getSetor() {
-
     if (Setores) {
       return Setores.map((sel) => {
         if (sel.id === props.number) {
@@ -67,6 +67,7 @@ export default function Componente5(props) {
       });
     }
   }
+  //update
   function updateSetor(e){
       e.preventDefault()
       const data = {
@@ -86,6 +87,7 @@ export default function Componente5(props) {
       
 
   }
+  //delete
   function deleteCargo(id, idSetor) {
     console.log(id, idSetor);
     console.log(Cargos);
@@ -100,7 +102,6 @@ export default function Componente5(props) {
       .then((res) => console.log(res));
       window.location.reload();
   }
-
   return (
     <div>
       <h3>{getSetor()}</h3>

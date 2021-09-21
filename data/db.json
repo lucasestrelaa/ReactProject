@@ -9,8 +9,8 @@
       "name": "Setor 3"
     },
     {
-      "id": 4,
-      "name": "Setor 4"
+      "name": "Setor 4A",
+      "id": 4
     },
     {
       "name": "Setor 5",
@@ -45,39 +45,19 @@
       "idSetor": 1
     },
     {
-      "name": "Cargo 3.2",
-      "idSetor": 2,
-      "id": 3
-    },
-    {
-      "name": "Cargo D4.1",
-      "idSetor": 2,
-      "id": 4
-    },
-    {
-      "name": "Cargo E5",
-      "id": 5,
-      "idSetor": 2
-    },
-    {
-      "name": "Cargo 6.1",
-      "id": 6,
-      "idSetor": 2
-    },
-    {
-      "name": "Cargo 7",
-      "idSetor": 2,
-      "id": 7
-    },
-    {
       "name": "Cargo 4",
       "idSetor": 1,
       "id": 8
     },
     {
-      "name": "Cargo 3.3",
-      "idSetor": 2,
+      "name": "Cargo 1",
+      "idSetor": 3,
       "id": 9
+    },
+    {
+      "name": "Cargo 3",
+      "idSetor": 4,
+      "id": 10
     }
   ]
 }

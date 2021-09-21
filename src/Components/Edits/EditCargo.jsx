@@ -5,6 +5,7 @@ export default function Componente5(props) {
   const [Cargos, setCargos] = useState(null);
   const [Setor, setSetor] = useState("null");
   const [Cargo, setCargo] = useState("null");
+  //data
   useEffect(() => {
     fetch("http://localhost:8000/cargos")
       .then((res) => {
@@ -47,6 +48,7 @@ export default function Componente5(props) {
       });
     }
   }
+  //update
   function updateCargo(e) {
     e.preventDefault();
     const data = {
@@ -60,11 +62,10 @@ export default function Componente5(props) {
       },
       body: JSON.stringify({ ...data }),
     })
-      .then(console.log("cargo Atualizado")) // or res.json()
+      .then(console.log("cargo Atualizado"))
       .then((res) => console.log(res));
       window.location.reload();
   }
-
   return (
     <div>
       <h3>{getCargo()}</h3>
