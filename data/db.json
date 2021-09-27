@@ -11,26 +11,6 @@
     {
       "name": "Setor 4A",
       "id": 4
-    },
-    {
-      "name": "Setor 5",
-      "id": 5
-    },
-    {
-      "name": "Setor 6",
-      "id": 6
-    },
-    {
-      "name": "Setor 6",
-      "id": 7
-    },
-    {
-      "name": "Setor 8",
-      "id": 8
-    },
-    {
-      "name": "Setor 25",
-      "id": 9
     }
   ],
   "cargos": [
@@ -55,9 +35,9 @@
       "id": 9
     },
     {
-      "name": "Cargo 3",
-      "idSetor": 4,
-      "id": 10
+      "name": "Cargo 1",
+      "idSetor": 2,
+      "id": 11
     }
   ]
 }

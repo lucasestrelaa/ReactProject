@@ -17,6 +17,7 @@ export default function Home(props) {
   const [editForm, setEditForm] = useState(false);
   const [SetorSel, setSetorSel] = useState(null);
   const [CargoSel, setCargoSel] = useState(null);
+  const [tog, setTog] = useState(3);
 
   const toggleEditForm = () => setEditForm(!editForm);
 
@@ -57,7 +58,7 @@ export default function Home(props) {
             <span key={del.id} className="card">
               {del.id} - {del.name}
             </span>
-            <button setor={del} onClick={() => toggleEditSetor(del.id)} class="btn btn-primary btn-sm">
+            <button setor={del} onClick={() => SE1(del.id, 1)} class="btn btn-primary btn-sm">
               Editar
             </button>
             <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteSetor(del.id)}>Excluir Setor</button>
@@ -74,7 +75,7 @@ export default function Home(props) {
           return (
             <div>
               <span key={cargo.id} class="card">{cargo.name}</span>
-              <button type="button" class="btn btn-primary btn-sm" onClick={() => toggleEditCargo(cargo.id)}>Editar</button>
+              <button type="button" class="btn btn-primary btn-sm" onClick={() => SE1(cargo.id, 2)}>Editar</button>
               <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
                 Excluir Cargo
               </button>
@@ -85,6 +86,57 @@ export default function Home(props) {
       });
     }
   }
+  //save or edit
+  function selecionado(){
+    switch (tog) {
+      case 1:
+        console.log("setor");
+        showSetor();
+        
+        
+        break;
+      case 2:
+        console.log("cargo")
+        break;
+      case 3:
+          console.log("novo");
+
+        break;
+    }
+  }
+  function showSetor(){
+    console.log("a");
+    return (
+      <div>
+        <EditSetor number={changeSetor()} className="Conteudo" />
+      </div>
+    );
+  }
+  function SE1(del, num){
+    setTog(num)
+    selecionado(num)
+    
+    
+    //ex(del)
+  }
+  function ex(del){
+    if(tog){
+      return (
+          <div>
+            <EditSetor number={changeSetor()}className="Conteudo" />
+          </div>
+        )
+        
+    }else{
+      return (
+        <div>
+          <NewSetor />
+        </div>
+      )
+    }
+  }
+
+  
   //Read one
 
   const toggleEditSetor = (del) => setSetorSel(del);
@@ -129,14 +181,14 @@ export default function Home(props) {
   return (
     <div className="Body">
       <nav className="NavData">
-        <Data setores={getSetores()} className="Conteudo"></Data>
+        <Data setores={getSetores()}  SE1={SE1} className="Conteudo"></Data>
         {/*<Edit changeEdit={toggleEditForm} className="Conteudo"></Edit>
         <ShowEditting number={changeEdit()} className="Conteudo"></ShowEditting>*/}
       </nav>
       <nav className="NavForm">
-        <EditSetor number={changeSetor()} className="Conteudo"></EditSetor>
+        <div>{selecionado()}</div>
         <EditCargo number={changeCargo()} className="Conteudo"></EditCargo>
-        <NewSetor></NewSetor>
+        
       </nav>
     </div>
   );
