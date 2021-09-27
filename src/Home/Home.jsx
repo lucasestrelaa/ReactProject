@@ -17,7 +17,7 @@ export default function Home(props) {
   const [editForm, setEditForm] = useState(false);
   const [SetorSel, setSetorSel] = useState(null);
   const [CargoSel, setCargoSel] = useState(null);
-  const [tog, setTog] = useState(3);
+  const [tog, setTog] = useState(1);
 
   const toggleEditForm = () => setEditForm(!editForm);
 
@@ -51,6 +51,7 @@ export default function Home(props) {
 
   //Read
   function getSetores() {
+
     if (Setores) {
       return Setores.map((del) => {
         return (
@@ -58,7 +59,7 @@ export default function Home(props) {
             <span key={del.id} className="card">
               {del.id} - {del.name}
             </span>
-            <button setor={del} onClick={() => SE1(del.id, 1)} class="btn btn-primary btn-sm">
+            <button setor={del} onClick={() => SE2(del.id)} class="btn btn-primary btn-sm">
               Editar
             </button>
             <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteSetor(del.id)}>Excluir Setor</button>
@@ -75,7 +76,7 @@ export default function Home(props) {
           return (
             <div>
               <span key={cargo.id} class="card">{cargo.name}</span>
-              <button type="button" class="btn btn-primary btn-sm" onClick={() => SE1(cargo.id, 2)}>Editar</button>
+              <button type="button" class="btn btn-primary btn-sm" onClick={() => SE3(cargo.id)}>Editar</button>
               <button type="button" class="btn btn-danger btn-sm" onClick={() => deleteCargo(cargo.id, cargo.idSetor)}>
                 Excluir Cargo
               </button>
@@ -87,37 +88,41 @@ export default function Home(props) {
     }
   }
   //save or edit
+  //1 = novo || 2 = setor || 3 - cargo
   function selecionado(){
     switch (tog) {
       case 1:
-        console.log("setor");
-        showSetor();
-        
-        
+          return (
+            <NewSetor />
+          );
         break;
       case 2:
-        console.log("cargo")
+        console.log("setor");
+        return (
+          <EditSetor number={changeSetor()} className="Conteudo"></EditSetor>
+        );
         break;
       case 3:
-          console.log("novo");
-
+        return (
+          <EditCargo number={changeCargo()} className="Conteudo"></EditCargo>
+        );
         break;
     }
   }
-  function showSetor(){
-    console.log("a");
-    return (
-      <div>
-        <EditSetor number={changeSetor()} className="Conteudo" />
-      </div>
-    );
+  // funções para selecionar qual será o formulário que será exibido
+  function SE1(){
+    setTog(1)
+    selecionado(tog)
   }
-  function SE1(del, num){
-    setTog(num)
-    selecionado(num)
-    
-    
-    //ex(del)
+  function SE2(idSetor){
+    setSetorSel(idSetor)
+    setTog(2)
+    selecionado(tog)
+  }
+  function SE3(idCargo){
+    setCargoSel(idCargo)
+    setTog(3)
+    selecionado(tog)
   }
   function ex(del){
     if(tog){
@@ -186,9 +191,7 @@ export default function Home(props) {
         <ShowEditting number={changeEdit()} className="Conteudo"></ShowEditting>*/}
       </nav>
       <nav className="NavForm">
-        <div>{selecionado()}</div>
-        <EditCargo number={changeCargo()} className="Conteudo"></EditCargo>
-        
+        <div>{selecionado()}</div>        
       </nav>
     </div>
   );

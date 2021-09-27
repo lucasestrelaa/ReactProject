@@ -26,24 +26,29 @@ export default function Componente5(props) {
     if (Cargos) {
       return Cargos.map((carg) => {
         if (carg.id === props.number) {
-          return Setores.map((setr) => {
-            if (setr.id === carg.idSetor) {
-              return (
-                <div>
-                  <h3>Setor: {setr.name}</h3>
-                  <form onSubmit={updateCargo}>
-                    <input type="text" name="id" id="id" value={carg.id} readOnly hidden/>
-                    <input type="text" name="idSetor" id="idSetor" value={carg.idSetor} readOnly hidden/>
-                    <div class="col-auto">
-                      <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
-                    <p>{() => props.getCargos}</p>
-                  </form>
-                </div>
-              );
-            }
-          });
+          if(Setores){
+            return Setores.map((setr) => {
+              if (setr.id === carg.idSetor) {
+                return (
+                  <div>
+                    <h3>Setor: {setr.name}</h3>
+                    <form onSubmit={updateCargo}>
+                      <input type="text" name="id" id="id" value={carg.id} readOnly hidden/>
+                      <input type="text" name="idSetor" id="idSetor" value={carg.idSetor} readOnly hidden/>
+                      <div class="col-auto">
+                        <input type="text" name="name" id="name" placeholder={carg.name} onChange={(e) => setCargo(e.target.value)} />
+                      </div>
+                      <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
+                      <p>{() => props.getCargos}</p>
+                    </form>
+                  </div>
+                );
+              }
+            });
+          }else{
+
+          }
+          
         }
       });
     }
