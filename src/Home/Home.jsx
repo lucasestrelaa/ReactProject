@@ -124,23 +124,6 @@ export default function Home(props) {
     setTog(3)
     selecionado(tog)
   }
-  function ex(del){
-    if(tog){
-      return (
-          <div>
-            <EditSetor number={changeSetor()}className="Conteudo" />
-          </div>
-        )
-        
-    }else{
-      return (
-        <div>
-          <NewSetor />
-        </div>
-      )
-    }
-  }
-
   
   //Read one
 
