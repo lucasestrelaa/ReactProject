@@ -14,18 +14,10 @@ import "./Home.css";
 export default function Home(props) {
   const [Setores, setSetores] = useState(null);
   const [Cargos, setCargos] = useState(null);
-  const [editForm, setEditForm] = useState(false);
   const [SetorSel, setSetorSel] = useState(null);
   const [CargoSel, setCargoSel] = useState(null);
   const [tog, setTog] = useState(1);
 
-  const toggleEditForm = () => setEditForm(!editForm);
-
-  const changeEdit = () =>
-    editForm
-      ? "Editando" + console.log(Setores)
-      : "Bloqueado" + console.log(Cargos);
-      
   //data and variables
   useEffect(() => {
     fetch("http://localhost:8000/cargos")
@@ -89,12 +81,12 @@ export default function Home(props) {
   }
   //save or edit
   //1 = novo || 2 = setor || 3 - cargo
-  function selecionado(){
+  function selecionado() {
     switch (tog) {
       case 1:
-          return (
-            <NewSetor />
-          );
+        return (
+          <NewSetor />
+        );
         break;
       case 2:
         console.log("setor");
@@ -110,21 +102,21 @@ export default function Home(props) {
     }
   }
   // funções para selecionar qual será o formulário que será exibido
-  function SE1(){
+  function SE1() {
     setTog(1)
     selecionado(tog)
   }
-  function SE2(idSetor){
+  function SE2(idSetor) {
     setSetorSel(idSetor)
     setTog(2)
     selecionado(tog)
   }
-  function SE3(idCargo){
+  function SE3(idCargo) {
     setCargoSel(idCargo)
     setTog(3)
     selecionado(tog)
   }
-  
+
   //Read one
 
   const toggleEditSetor = (del) => setSetorSel(del);
@@ -134,7 +126,7 @@ export default function Home(props) {
   const toggleEditCargo = (carg) => setCargoSel(carg);
 
   const changeCargo = () => (CargoSel ? CargoSel : "");
-  
+
   //delete
   function deleteSetor(id) {
     console.log(id);
@@ -160,21 +152,21 @@ export default function Home(props) {
     })
       .then(console.log("cargo removido"))
       .then((res) => console.log(res));
-      window.location.reload();
+    window.location.reload();
   }
   //layout
-  $(".showOrHide").click(function(){
+  $(".showOrHide").click(function () {
     $(this).next("ulCargos").toggle();
   });
   return (
     <div className="Body">
       <nav className="NavData">
-        <Data setores={getSetores()}  SE1={SE1} className="Conteudo"></Data>
+        <Data setores={getSetores()} SE1={SE1} className="Conteudo"></Data>
         {/*<Edit changeEdit={toggleEditForm} className="Conteudo"></Edit>
         <ShowEditting number={changeEdit()} className="Conteudo"></ShowEditting>*/}
       </nav>
       <nav className="NavForm">
-        <div>{selecionado()}</div>        
+        <div>{selecionado()}</div>
       </nav>
     </div>
   );
