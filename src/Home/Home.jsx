@@ -17,10 +17,11 @@ export default function Home(props) {
   const [SetorSel, setSetorSel] = useState(null);
   const [CargoSel, setCargoSel] = useState(null);
   const [tog, setTog] = useState(1);
+  const api = "http://localhost:8000";
 
   //data and variables
   useEffect(() => {
-    fetch("http://localhost:8000/cargos")
+    fetch(api,"/cargos")
       .then((res) => {
         //console.log(res.json());
         return res.json();
@@ -29,7 +30,7 @@ export default function Home(props) {
         setCargos(cargo);
       });
 
-    fetch("http://localhost:8000/setores")
+    fetch(api,"/setores")
       .then((res) => {
         return res.json();
       })
